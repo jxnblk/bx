@@ -2,7 +2,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="color-states.html">
 
-<polymer-element name="bx-nav" attributes="theme tall">
+<polymer-element name="bx-nav" attributes="theme big">
 
   <template>
     <link rel="stylesheet" href="../css/utility.css">
@@ -10,7 +10,7 @@
     <style>
       :host { display: block }
     </style>
-    <bx-color-states state="{{ theme }}" colorclass="{{ colorclass }}" inverse="{{ inverse }}"></bx-color-states>
+    <bx-color-states state="{{ theme }}" colorclass="{{ colorclass }}" default="" inverse="{{ inverse }}"></bx-color-states>
 
     <div class="{{ colorclass }}">
       <content id="content"></content>
@@ -23,12 +23,12 @@
       theme: '',
       colorclass: '',
       inverse: false,
-      tall: true,
+      big: true,
       ready: function() {
         var contents = this.$.content.getDistributedNodes();
         for (var i = 0; i < contents.length; i++) {
           contents[i].color = this.inverse ? 'dark' : 'light';
-          contents[i].tall = this.tall;
+          contents[i].big = this.big;
         }
       }
     });

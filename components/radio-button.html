@@ -4,6 +4,7 @@
 <polymer-element name="bx-radio-button" attributes="model name value color">
 
   <template>
+    <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/utility.css">
     <style>
       :host { display: inline-block }
@@ -19,9 +20,10 @@
         data-model="{{ model }}"
         checked="{{ active }}"
         name="{{ name }}">
-        <bx-button active="{{ active }}" color="{{ color }}" toggle="true">
+        <button is="bx-button"
+          active="{{ active }}" color="{{ color }}" toggle="true">
           <content></content>
-        </bx-button>
+        </button>
     </label>
   </template>
 

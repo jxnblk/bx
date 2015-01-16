@@ -1,12 +1,13 @@
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="bx-color-states" attributes="state colorclass inverse">
+<polymer-element name="bx-color-states" attributes="state colorclass inverse default">
 
   <script>
     Polymer({
       state: '',
       colorclass: '',
+      default: '',
       inverse: false,
       getClass: function() {
         switch (this.state) {
@@ -26,7 +27,7 @@
             return 'white bg-dark-gray';
             break;
           default:
-            return 'bg-white border';
+            return this.default;
         }
       },
       getInverse: function() {

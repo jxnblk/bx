@@ -27,7 +27,7 @@
 </bx-media>
 ```
 
-#### Attributes
+**Attributes**
 - right
 - center
 
@@ -42,38 +42,47 @@
 <bx-message theme="dark" dismiss="true">Dark Message</bx-message>
 ```
 
+**Attributes**
+- theme
+- dismiss
+
 ## Badge
 
 ```html
 <h3>Hamburger <bx-badge>Default</bx-badge></h3>
-<h3>Hamburger <bx-badge state="info">Info</bx-badge></h3>
-<h3>Hamburger <bx-badge state="success">Success</bx-badge></h3>
-<h3>Hamburger <bx-badge state="warning">Warning</bx-badge></h3>
-<h3>Hamburger <bx-badge state="error">Error</bx-badge></h3>
-<h3>Hamburger <bx-badge state="dark">Dark</bx-badge></h3>
+<h3>Hamburger <bx-badge theme="info">Info</bx-badge></h3>
+<h3>Hamburger <bx-badge theme="success">Success</bx-badge></h3>
+<h3>Hamburger <bx-badge theme="warning">Warning</bx-badge></h3>
+<h3>Hamburger <bx-badge theme="error">Error</bx-badge></h3>
+<h3>Hamburger <bx-badge theme="dark">Dark</bx-badge></h3>
 ```
 
 ## Button
 ```html
-<bx-button>Button</bx-button>
-<bx-button color="blue">Blue Button</bx-button>
-<bx-button color="red">Red Button</bx-button>
-<bx-button color="blue" toggle="true">Toggle Button</bx-button>
+<button is="bx-button">Button</button>
+<button is="bx-button" color="blue">Blue Button</button>
+<button is="bx-button" color="red">Red Button</button>
+<button is="bx-button" color="blue" toggle="true">Toggle Button</button>
 ```
 
 ## Radio Button
 
 ```html
-<bx-radio-button name="radio-button" value="red">Radio Button</bx-radio-button>
+<template is="auto-binding">
+  <bx-radio-button name="radio-button" model="{{ value }}" value="red">Red</bx-radio-button>
+  <bx-radio-button name="radio-button" model="{{ value }}" value="green">Green</bx-radio-button>
+  <bx-radio-button name="radio-button" model="{{ value }}" value="blue">Blue</bx-radio-button>
+  <code class="ml2">value: {{ value }}</code>
+</template>
 ```
 
 ## Button Group
 
 ```html
 <bx-button-group>
-  <bx-button>Red</bx-button>
-  <bx-button>Green</bx-button>
-  <bx-button>Blue</bx-button>
+  <button is="bx-button">Red</button>
+  <button is="bx-button">Green</button>
+  <button is="bx-button">Blue</button>
 </bx-button-group>
 ```
 
@@ -81,12 +90,12 @@
 
 ```html
 <template is="auto-binding">
-  <bx-radio-group name="radio-buttons" model="{{ data }}'" class="mb2">
+  <bx-radio-group name="radio-buttons" model="{{ data }}'" class="mr2 mb2">
     <bx-radio-button name="radio-buttons" model="{{ data }}" value="red">Red</bx-radio-button>
     <bx-radio-button name="radio-buttons" model="{{ data }}" value="green">Green</bx-radio-button>
     <bx-radio-button name="radio-buttons" model="{{ data }}" value="blue">Blue</bx-radio-button>
   </bx-radio-group>
-  <pre>value: {{ data }}</pre>
+  <code>value: {{ data }}</code>
 </template>
 ```
 
@@ -135,7 +144,7 @@
 </bx-row>
 ```
 
-# Flex
+## Flex
 
 ```html
 <bx-flex wrap="true" class="mxn2">
@@ -179,7 +188,7 @@
 
 ```html
 <bx-dropdown>
-  <bx-button>Dropdown</bx-button>
+  <button is="bx-button">Dropdown</button>
   <bx-menu>
     <a is="bx-nav-item" href="#dropdown">Action</a>
     <a is="bx-nav-item" href="#dropdown">Action</a>
@@ -219,7 +228,7 @@
 - [x] Dropdown (test with core-dropdown)
 - [ ] Modal
 - [/] Pagination
-- [ ] Nav
+- [x] Nav
 - [ ] Navbar
 - [x] Menu
 - [ ] Tabs

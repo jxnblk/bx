@@ -2,7 +2,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="color-states.html">
 
-<polymer-element name="bx-badge" attributes="state" noscript>
+<polymer-element name="bx-badge" attributes="theme" noscript>
 
   <template>
     <link rel="stylesheet" href="../css/utility.css">
@@ -10,7 +10,7 @@
     <style>
       :host { display: inline-block; font-size: 75%; }
     </style>
-    <bx-color-states state="{{ state }}" colorclass="{{ colorclass }}"></bx-color-states>
+    <bx-color-states state="{{ theme }}" colorclass="{{ colorclass }}"></bx-color-states>
 
     <span class="inline-block button-small rounded {{ colorclass }}">
       <content></content>

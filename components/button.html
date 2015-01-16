@@ -1,18 +1,22 @@
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="bx-button" attributes="color toggle active">
+<polymer-element name="bx-button"
+  style="padding:0;border:0;background-color:transparent;"
+  attributes="color toggle active" extends="button">
 
-  <template>
+  <template class="">
     <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/color.css">
     <style>
-      :host { display: inline-block }
+      :host {
+        display: inline-block;
+        padding: 0;
+      }
     </style>
 
     <button
-      class="button-{{ color }}
-        {{ active ? 'is-active' : '' }}"
+      class="button-{{ color }} {{ active ? 'is-active' : '' }}"
       on-click="{{ handleClick }}">
       <content></content>
     </button>

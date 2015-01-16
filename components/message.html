@@ -12,13 +12,14 @@
     <style>
       :host { display: block }
     </style>
-    <bx-color-states state="{{ theme }}" colorclass="{{ colorclass }}"></bx-color-class>
+    <bx-color-states state="{{ theme }}" colorclass="{{ colorclass }}" inverse="{{ inverse }}" default="bg-white border"></bx-color-class>
 
     <div class="Message flex bold mb2 rounded {{ colorclass }}">
       <div class="Message-content p2 flex-auto">
         <content></content>
       </div>
-      <a class="Message-dismiss button button-big button-nav-dark
+      <a class="Message-dismiss button button-big
+        {{ inverse ? 'button-nav-dark' : 'button-nav-light' }}
         {{ dismiss ? '' : 'display-none' }}"
         title="Dismiss"
         on-click="{{ handleDismiss }}">

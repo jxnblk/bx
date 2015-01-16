@@ -11,6 +11,7 @@ var fs = require('fs');
 var _ = require('lodash');
 var marked = require('marked');
 var markedExample = require('marked-example');
+var markedToc = require('marked-toc');
 
 gulp.task('md', function() {
 
@@ -25,8 +26,11 @@ gulp.task('md', function() {
   var md = fs.readFileSync('./README.md', 'utf8');
   var content = marked(md, { renderer: renderer });
 
+  var tocmd = markedToc(md);
+  var toc = marked(tocmd);
+
   var tpl = fs.readFileSync('./src/templates/index.html', 'utf8');
-  var rendered = _.template(tpl, { body: content });
+  var rendered = _.template(tpl, { body: content, toc: toc });
   fs.writeFileSync('./index.html', rendered);
 
 });
