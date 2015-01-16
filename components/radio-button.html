@@ -1,0 +1,43 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="button.html">
+
+<polymer-element name="bx-radio-button" attributes="model name value color">
+
+  <template>
+    <link rel="stylesheet" href="../css/utility.css">
+    <style>
+      :host { display: inline-block }
+      :host-context(.ButtonGroup)::content * /deep * {
+        border-radius: 0;
+      }
+    </style>
+
+    <label class="inline-block">
+      <input type="radio"
+        class="hide"
+        value="{{ value }}"
+        data-model="{{ model }}"
+        checked="{{ active }}"
+        name="{{ name }}">
+        <bx-button active="{{ active }}" color="{{ color }}" toggle="true">
+          <content></content>
+        </bx-button>
+    </label>
+  </template>
+
+  <script>
+    Polymer({
+
+      model: '',
+      name: 'radio',
+      value: '',
+      get active() {
+        return this.model == this.value;
+      },
+      set active(val) { this.model = this.value; },
+      color: 'blue',
+
+    });
+  </script>
+
+</polymer-element>

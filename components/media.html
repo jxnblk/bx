@@ -1,17 +1,18 @@
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="bx-media" attributes="center" noscript>
+<polymer-element name="bx-media" attributes="center right" noscript>
 
   <template>
     <link rel="stylesheet" href="../css/flex-object.css">
+    <link rel="stylesheet" href="../css/utility.css">
     <style>
       :host { display: block }
-      figure { margin: 0 1rem 0 0 }
+      figure { margin: 0 }
     </style>
 
     <div class="flex {{ center ? 'flex-center' : '' }}">
-      <figure>
+      <figure class="{{ right ? 'flex-last ml2' : 'mr2' }}">
         <content select="img, svg, picture"></content>
       </figure>
       <div class="flex-auto">

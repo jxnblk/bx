@@ -1,0 +1,37 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="bx-button-group" attributes="" noscript>
+
+  <template>
+    <link rel="stylesheet" href="../css/utility.css">
+    <style>
+      :host {
+        display: inline-block;
+        font-size: 0;
+      }
+      ::content * {
+        font-size: 1rem;
+      }
+      /* Figure out a cleaner way to handle rounded styles */
+      ::content * /deep/ *,
+      ::content * /deep/ * /deep/ * /deep/ * {
+        border-radius: 0;
+      }
+      ::content *:first-child /deep/ *,
+      ::content *:first-child /deep/ * /deep/ * /deep/ * {
+        border-radius: 3px 0 0 3px;
+      }
+      ::content *:last-child /deep/ *,
+      ::content *:last-child /deep/ * /deep/ * /deep/ * {
+        border-radius: 0 3px 3px 0;
+      }
+    </style>
+
+    <div class="ButtonGroup inline-block clearfix">
+      <content></content>
+    </div>
+
+  </template>
+
+</polymer-element>

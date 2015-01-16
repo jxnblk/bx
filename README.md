@@ -12,6 +12,14 @@
 ```
 
 ```html
+<bx-media right="true">
+  <img src="//placehold.it/128"/>
+  <h3>Media Object</h3>
+  <p>Put whatever you want here</p>
+</bx-media>
+```
+
+```html
 <bx-media center="true">
   <img src="//placehold.it/128"/>
   <h3 class="m0">Centered Media Object</h3>
@@ -19,15 +27,19 @@
 </bx-media>
 ```
 
+#### Attributes
+- right
+- center
+
 ## Message
 
 ```html
 <bx-message>Flash Message</bx-message>
-<bx-message state="info">Info Message</bx-message>
-<bx-message state="success">Success Message</bx-message>
-<bx-message state="warning">Warning Message</bx-message>
-<bx-message state="error">Error Message</bx-message>
-<bx-message state="dark">Dark Message</bx-message>
+<bx-message theme="info">Info Message</bx-message>
+<bx-message theme="success">Success Message</bx-message>
+<bx-message theme="warning">Warning Message</bx-message>
+<bx-message theme="error">Error Message</bx-message>
+<bx-message theme="dark" dismiss="true">Dark Message</bx-message>
 ```
 
 ## Badge
@@ -49,21 +61,68 @@
 <bx-button color="blue" toggle="true">Toggle Button</bx-button>
 ```
 
+## Radio Button
+
+```html
+<bx-radio-button name="radio-button" value="red">Radio Button</bx-radio-button>
+```
+
+## Button Group
+
+```html
+<bx-button-group>
+  <bx-button>Red</bx-button>
+  <bx-button>Green</bx-button>
+  <bx-button>Blue</bx-button>
+</bx-button-group>
+```
+
+## Radio Group
+
+```html
+<template is="auto-binding">
+  <bx-radio-group name="radio-buttons" model="{{ data }}'" class="mb2">
+    <bx-radio-button name="radio-buttons" model="{{ data }}" value="red">Red</bx-radio-button>
+    <bx-radio-button name="radio-buttons" model="{{ data }}" value="green">Green</bx-radio-button>
+    <bx-radio-button name="radio-buttons" model="{{ data }}" value="blue">Blue</bx-radio-button>
+  </bx-radio-group>
+  <pre>value: {{ data }}</pre>
+</template>
+```
+
 ## Nav Item
 
 ```html
-<bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
+<a is="bx-nav-item" href="#nav-item">Nav Item</a>
 ```
 
 ## Menu
 
 ```html
 <bx-menu>
-  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
-  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
-  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
-  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
 </bx-menu>
+```
+
+## Nav
+
+```html
+<bx-nav>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+</bx-nav>
+```
+
+```html
+<bx-nav theme="info">
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+</bx-nav>
 ```
 
 ## Column & Row
@@ -89,15 +148,58 @@
 ## Panel 
 
 ```html
-<bx-panel state="info" class="p2">
+<bx-panel state="info" class="mb2">
   <header>bx-panel</header>
   <img src="//placekitten.com/256" />
   <p>Just a default panel</p>
   <footer>Footer</footer>
 </bx-panel>
+<bx-panel>
+  <h1>Panel with no header or footer</h1>
+  <p>Just a default panel</p>
+</bx-panel>
 ```
 
----
+## Card
+
+```html
+<bx-card class="mr2">
+  <img src="//placehold.it/256"/>
+  <h3 class="m0">Card</h3>
+  <p class="m0">Default card</p>
+</bx-card>
+<bx-card state="info">
+  <img src="//placehold.it/256"/>
+  <h3 class="m0">Info Card</h3>
+  <p class="m0">Info card</p>
+</bx-card>
+```
+
+## Dropdown
+
+```html
+<bx-dropdown>
+  <bx-button>Dropdown</bx-button>
+  <bx-menu>
+    <a is="bx-nav-item" href="#dropdown">Action</a>
+    <a is="bx-nav-item" href="#dropdown">Action</a>
+    <a is="bx-nav-item" href="#dropdown">Action</a>
+    <a is="bx-nav-item" href="#dropdown">Action</a>
+  </bx-menu>
+</bx-dropdown>
+```
+
+## Pagination
+
+```html
+<bx-pagination>
+  <a is="bx-nav-item">Previous</a>
+  <a is="bx-nav-item">1</a>
+  <a is="bx-nav-item" active="true">2</a>
+  <a is="bx-nav-item">3</a>
+  <a is="bx-nav-item">Next</a>
+</bx-pagination>
+```
 
 <!--
 
@@ -112,11 +214,11 @@
 - [x] Color States
 - [x] Badge
 - [x] Message
-- [/] Panel
-- [ ] Card
-- [ ] Dropdown
+- [x] Panel
+- [x] Card
+- [x] Dropdown (test with core-dropdown)
 - [ ] Modal
-- [ ] Pagination
+- [/] Pagination
 - [ ] Nav
 - [ ] Navbar
 - [x] Menu
@@ -125,8 +227,9 @@
 ## Forms
 - [x] Button
 - [x] Nav Item
-- [ ] Button Group
-- [ ] Radio Button
+- [/] Button Group
+- [x] Radio Button
+- [/] Radio Group
 - [ ] Range
 - [ ] Progress
 - [ ] Stepper

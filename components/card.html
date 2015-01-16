@@ -1,0 +1,30 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="color-states.html">
+
+<polymer-element name="bx-card" attributes="state" noscript>
+
+  <template>
+    <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <style>
+      :host { display: inline-block }
+      ::content img,
+      ::content svg,
+      ::content picture {
+        width: 100%;
+      }
+    </style>
+    <bx-color-states state="{{ state }}" colorclass="{{ colorclass }}"></bx-color-states>
+
+    <div class="border rounded {{ colorclass }}">
+      <figure class="m0">
+        <content select="img, svg, picture"></content>
+      </figure>
+      <div id="main" class="p2">
+        <content></content>
+      </div>
+    </section>
+  </template>
+
+</polymer-element>

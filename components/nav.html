@@ -1,0 +1,37 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="color-states.html">
+
+<polymer-element name="bx-nav" attributes="theme tall">
+
+  <template>
+    <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <style>
+      :host { display: block }
+    </style>
+    <bx-color-states state="{{ theme }}" colorclass="{{ colorclass }}" inverse="{{ inverse }}"></bx-color-states>
+
+    <div class="{{ colorclass }}">
+      <content id="content"></content>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+      theme: '',
+      colorclass: '',
+      inverse: false,
+      tall: true,
+      ready: function() {
+        var contents = this.$.content.getDistributedNodes();
+        for (var i = 0; i < contents.length; i++) {
+          contents[i].color = this.inverse ? 'dark' : 'light';
+          contents[i].tall = this.tall;
+        }
+      }
+    });
+  </script>
+
+</polymer-element>

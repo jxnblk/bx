@@ -1,36 +1,49 @@
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="bx-color-states" attributes="state colorclass">
+<polymer-element name="bx-color-states" attributes="state colorclass inverse">
 
   <script>
     Polymer({
       state: '',
       colorclass: '',
+      inverse: false,
+      getClass: function() {
+        switch (this.state) {
+          case 'info':
+            return 'white bg-blue';
+            break;
+          case 'success':
+            return 'white bg-green';
+            break;
+          case 'warning':
+            return 'bg-yellow';
+            break;
+          case 'error':
+            return 'white bg-red';
+            break;
+          case 'dark':
+            return 'white bg-dark-gray';
+            break;
+          default:
+            return 'bg-white border';
+        }
+      },
+      getInverse: function() {
+        switch (this.state) {
+          case 'info':
+          case 'success':
+          case 'error':
+          case 'dark':
+            return true;
+            break;
+          default:
+            return false;
+        }
+      },
       ready: function() {
-        var self = this;
-        var getClass = function() {
-          switch (self.state) {
-            case 'info':
-              return 'white bg-blue';
-              break;
-            case 'success':
-              return 'white bg-green';
-              break;
-            case 'warning':
-              return 'bg-yellow';
-              break;
-            case 'error':
-              return 'white bg-red';
-              break;
-            case 'dark':
-              return 'white bg-dark-gray';
-              break;
-            default:
-              return 'bg-lighter-gray border';
-          }
-        };
-        this.colorclass = getClass();
+        this.colorclass = this.getClass();
+        this.inverse = this.getInverse();
       }
     });
   </script>

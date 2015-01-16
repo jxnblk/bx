@@ -1,0 +1,53 @@
+
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="bx-radio-group" attributes="name model">
+
+  <template>
+    <link rel="stylesheet" href="../css/utility.css">
+    <style>
+      :host {
+        display: inline-block;
+        font-size: 0;
+      }
+      ::content * {
+        font-size: 1rem;
+      }
+      /* Figure out a cleaner way to handle rounded styles */
+      ::content * /deep/ *,
+      ::content * /deep/ * /deep/ * /deep/ * {
+        border-radius: 0;
+      }
+      ::content *:first-child /deep/ *,
+      ::content *:first-child /deep/ * /deep/ * /deep/ * {
+        border-radius: 3px 0 0 3px;
+      }
+      ::content *:last-child /deep/ *,
+      ::content *:last-child /deep/ * /deep/ * /deep/ * {
+        border-radius: 0 3px 3px 0;
+      }
+    </style>
+
+    <div class="RadioGroup inline-block clearfix">
+      <content id="content"></content>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+      name: '',
+      model: '',
+      //modelChanged : function() {
+      //  console.log('modelChanged', this.model, this.$.content);
+      //  //var contents = this.$.content.getDistributedNodes();
+      //  //console.log(contents);
+      //  //if (contents.length > 0) {
+      //  //  contents[0].model = this.model;
+      //  //}
+      //},
+    });
+  </script>
+
+</polymer-element>

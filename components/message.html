@@ -2,20 +2,44 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="color-states.html">
 
-<polymer-element name="bx-message" attributes="state dismiss" noscript>
+<polymer-element name="bx-message" attributes="theme dismiss">
 
   <template>
+    <link rel="stylesheet" href="../css/base.css">
     <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/flex-object.css">
     <link rel="stylesheet" href="../css/color.css">
     <style>
       :host { display: block }
     </style>
-    <bx-color-states state="{{ state }}" colorclass="{{ colorclass }}"></bx-color-class>
+    <bx-color-states state="{{ theme }}" colorclass="{{ colorclass }}"></bx-color-class>
 
-    <div class="bold p2 mb2 rounded {{ colorclass }}">
-      <content></content>
+    <div class="Message flex bold mb2 rounded {{ colorclass }}">
+      <div class="Message-content p2 flex-auto">
+        <content></content>
+      </div>
+      <a class="Message-dismiss button button-big button-nav-dark
+        {{ dismiss ? '' : 'display-none' }}"
+        title="Dismiss"
+        on-click="{{ handleDismiss }}">
+          <span class="h3">&times;</span>
+          <span class="hide">Dismiss</span>
+      </a>
     </div>
 
   </template>
+
+  <script>
+    Polymer({
+      theme: '',
+      dismiss: false,
+      handleDismiss: function() {
+        console.log('dismiss');
+        if (this.dismiss) {
+          this.style.display = 'none';
+        }
+      }
+    });
+  </script>
 
 </polymer-element>

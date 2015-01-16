@@ -1,7 +1,7 @@
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="bx-button" attributes="color toggle">
+<polymer-element name="bx-button" attributes="color toggle active">
 
   <template>
     <link rel="stylesheet" href="../css/base.css">
@@ -10,7 +10,10 @@
       :host { display: inline-block }
     </style>
 
-    <button class="button-{{ color }} {{ active ? 'is-active' : '' }}" on-click="{{ handleClick }}">
+    <button
+      class="button-{{ color }}
+        {{ active ? 'is-active' : '' }}"
+      on-click="{{ handleClick }}">
       <content></content>
     </button>
 
@@ -23,7 +26,6 @@
       toggle: false,
       toggleActive: function () {
         this.active = !this.active;
-        console.log(this.active);
       },
       ready: function () {
         if (this.toggle) {

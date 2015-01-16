@@ -2,7 +2,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="color-states.html">
 
-<polymer-element name="bx-panel" attributes="state" noscript>
+<polymer-element name="bx-panel" attributes="state">
 
   <template>
     <link rel="stylesheet" href="../css/utility.css">
@@ -14,16 +14,28 @@
     <bx-color-states state="{{ state }}" colorclass="{{ colorclass }}"></bx-color-states>
 
     <section class="flex flex-column border rounded">
-      <header id="h" class="bold p2 {{ colorclass }}">
-        <content select="header"></content>
+      <header class="bold p2 {{ colorclass }} {{ hasHeader ? '' : 'display-none' }}">
+        <content id="headercontent" select="header"></content>
       </header>
-      <footer class="flex-last p2 border-top bg-lighter-gray">
-        <content select="footer"></content>
+      <footer class="flex-last p2 border-top bg-lighter-gray {{ hasFooter ? '' : 'display-none' }}">
+        <content id="footercontent" select="footer"></content>
       </footer>
       <div id="main" class="p2">
         <content></content>
       </div>
     </section>
   </template>
+
+  <script>
+    Polymer({
+      state: '',
+      hasHeader: false,
+      hasFooter: true,
+      ready: function() {
+        this.hasHeader = this.$.headercontent.getDistributedNodes().length > 0;
+        this.hasFooter = this.$.footercontent.getDistributedNodes().length > 0;
+      }
+    });
+  </script>
 
 </polymer-element>

@@ -1,0 +1,40 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="bx-dropdown" attributes="">
+
+  <template>
+    <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <style>
+      :host { display: inline-block }
+      ::content bx-nav-item,
+      ::content bx-nav-item /deep/ a {
+        min-width: 12rem;
+      }
+    </style>
+
+    <div class="Dropdown inline-block relative">
+      <div class="inline-block" on-click="{{ toggle }}">
+        <content id="trigger" select="button, a, bx-button"></content>
+      </div>
+      <div class="fixed top-0 right-0 bottom-0 left-0 {{ isOpen ? '' : 'display-none' }}" on-click="{{ close }}"></div>
+      <div class="absolute z1 mt1 {{ isOpen ? '' : 'display-none' }}">
+        <content select="bx-menu, ul, ol"></content>
+      </div>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+      isOpen: false,
+      toggle: function() {
+        this.isOpen = !this.isOpen;
+      },
+      close: function() {
+        this.isOpen = false;
+      }
+    });
+  </script>
+
+</polymer-element>

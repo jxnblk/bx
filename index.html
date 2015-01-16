@@ -13,17 +13,22 @@
   <link rel="import" href="components/column.html">
   <link rel="import" href="components/flex.html">
 
-  <!-- Form Components
-  <link rel="import" href="components/radio-button.html">
-  -->
+  <!-- Form Components -->
   <link rel="import" href="components/button.html">
+  <link rel="import" href="components/radio-button.html">
   <link rel="import" href="components/nav-item.html">
+  <link rel="import" href="components/button-group.html">
+  <link rel="import" href="components/radio-group.html">
 
   <!-- App Components -->
   <link rel="import" href="components/message.html">
   <link rel="import" href="components/badge.html">
   <link rel="import" href="components/menu.html">
   <link rel="import" href="components/panel.html">
+  <link rel="import" href="components/card.html">
+  <link rel="import" href="components/dropdown.html">
+  <link rel="import" href="components/pagination.html">
+  <link rel="import" href="components/nav.html">
 
 </head>
 <body class="container px2">
@@ -53,6 +58,20 @@
 </div>
 <div class="MarkedExample bg-darken-1 rounded">
   <div class="MarkedExample-rendered p2">
+    <bx-media right="true">
+  <img src="//placehold.it/128"/>
+  <h3>Media Object</h3>
+  <p>Put whatever you want here</p>
+</bx-media>
+  </div>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-media</span> <span class="hljs-attribute">right</span>=<span class="hljs-value">"true"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//placehold.it/128"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h3</span>&gt;</span>Media Object<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Put whatever you want here<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">bx-media</span>&gt;</span></pre>
+</div>
+<div class="MarkedExample bg-darken-1 rounded">
+  <div class="MarkedExample-rendered p2">
     <bx-media center="true">
   <img src="//placehold.it/128"/>
   <h3 class="m0">Centered Media Object</h3>
@@ -65,22 +84,27 @@
   <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"m0"</span>&gt;</span>Basically the flag object<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">bx-media</span>&gt;</span></pre>
 </div>
+<h4 id="attributes">Attributes</h4>
+<ul>
+<li>right</li>
+<li>center</li>
+</ul>
 <h2 id="message">Message</h2>
 <div class="MarkedExample bg-darken-1 rounded">
   <div class="MarkedExample-rendered p2">
     <bx-message>Flash Message</bx-message>
-<bx-message state="info">Info Message</bx-message>
-<bx-message state="success">Success Message</bx-message>
-<bx-message state="warning">Warning Message</bx-message>
-<bx-message state="error">Error Message</bx-message>
-<bx-message state="dark">Dark Message</bx-message>
+<bx-message theme="info">Info Message</bx-message>
+<bx-message theme="success">Success Message</bx-message>
+<bx-message theme="warning">Warning Message</bx-message>
+<bx-message theme="error">Error Message</bx-message>
+<bx-message theme="dark" dismiss="true">Dark Message</bx-message>
   </div>
   <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-message</span>&gt;</span>Flash Message<span class="hljs-tag">&lt;/<span class="hljs-title">bx-message</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">bx-message</span> <span class="hljs-attribute">state</span>=<span class="hljs-value">"info"</span>&gt;</span>Info Message<span class="hljs-tag">&lt;/<span class="hljs-title">bx-message</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">bx-message</span> <span class="hljs-attribute">state</span>=<span class="hljs-value">"success"</span>&gt;</span>Success Message<span class="hljs-tag">&lt;/<span class="hljs-title">bx-message</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">bx-message</span> <span class="hljs-attribute">state</span>=<span class="hljs-value">"warning"</span>&gt;</span>Warning Message<span class="hljs-tag">&lt;/<span class="hljs-title">bx-message</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">bx-message</span> <span class="hljs-attribute">state</span>=<span class="hljs-value">"error"</span>&gt;</span>Error Message<span class="hljs-tag">&lt;/<span class="hljs-title">bx-message</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-title">bx-message</span> <span class="hljs-attribute">state</span>=<span class="hljs-value">"dark"</span>&gt;</span>Dark Message<span class="hljs-tag">&lt;/<span class="hljs-title">bx-message</span>&gt;</span></pre>
+<span class="hljs-tag">&lt;<span class="hljs-title">bx-message</span> <span class="hljs-attribute">theme</span>=<span class="hljs-value">"info"</span>&gt;</span>Info Message<span class="hljs-tag">&lt;/<span class="hljs-title">bx-message</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">bx-message</span> <span class="hljs-attribute">theme</span>=<span class="hljs-value">"success"</span>&gt;</span>Success Message<span class="hljs-tag">&lt;/<span class="hljs-title">bx-message</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">bx-message</span> <span class="hljs-attribute">theme</span>=<span class="hljs-value">"warning"</span>&gt;</span>Warning Message<span class="hljs-tag">&lt;/<span class="hljs-title">bx-message</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">bx-message</span> <span class="hljs-attribute">theme</span>=<span class="hljs-value">"error"</span>&gt;</span>Error Message<span class="hljs-tag">&lt;/<span class="hljs-title">bx-message</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">bx-message</span> <span class="hljs-attribute">theme</span>=<span class="hljs-value">"dark"</span> <span class="hljs-attribute">dismiss</span>=<span class="hljs-value">"true"</span>&gt;</span>Dark Message<span class="hljs-tag">&lt;/<span class="hljs-title">bx-message</span>&gt;</span></pre>
 </div>
 <h2 id="badge">Badge</h2>
 <div class="MarkedExample bg-darken-1 rounded">
@@ -112,29 +136,101 @@
 <span class="hljs-tag">&lt;<span class="hljs-title">bx-button</span> <span class="hljs-attribute">color</span>=<span class="hljs-value">"red"</span>&gt;</span>Red Button<span class="hljs-tag">&lt;/<span class="hljs-title">bx-button</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-title">bx-button</span> <span class="hljs-attribute">color</span>=<span class="hljs-value">"blue"</span> <span class="hljs-attribute">toggle</span>=<span class="hljs-value">"true"</span>&gt;</span>Toggle Button<span class="hljs-tag">&lt;/<span class="hljs-title">bx-button</span>&gt;</span></pre>
 </div>
+<h2 id="radio-button">Radio Button</h2>
+<div class="MarkedExample bg-darken-1 rounded">
+  <div class="MarkedExample-rendered p2">
+    <bx-radio-button name="radio-button" value="red">Radio Button</bx-radio-button>
+  </div>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-radio-button</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"radio-button"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"red"</span>&gt;</span>Radio Button<span class="hljs-tag">&lt;/<span class="hljs-title">bx-radio-button</span>&gt;</span></pre>
+</div>
+<h2 id="button-group">Button Group</h2>
+<div class="MarkedExample bg-darken-1 rounded">
+  <div class="MarkedExample-rendered p2">
+    <bx-button-group>
+  <bx-button>Red</bx-button>
+  <bx-button>Green</bx-button>
+  <bx-button>Blue</bx-button>
+</bx-button-group>
+  </div>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-button-group</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">bx-button</span>&gt;</span>Red<span class="hljs-tag">&lt;/<span class="hljs-title">bx-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">bx-button</span>&gt;</span>Green<span class="hljs-tag">&lt;/<span class="hljs-title">bx-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">bx-button</span>&gt;</span>Blue<span class="hljs-tag">&lt;/<span class="hljs-title">bx-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">bx-button-group</span>&gt;</span></pre>
+</div>
+<h2 id="radio-group">Radio Group</h2>
+<div class="MarkedExample bg-darken-1 rounded">
+  <div class="MarkedExample-rendered p2">
+    <template is="auto-binding">
+  <bx-radio-group name="radio-buttons" model="{{ data }}'" class="mb2">
+    <bx-radio-button name="radio-buttons" model="{{ data }}" value="red">Red</bx-radio-button>
+    <bx-radio-button name="radio-buttons" model="{{ data }}" value="green">Green</bx-radio-button>
+    <bx-radio-button name="radio-buttons" model="{{ data }}" value="blue">Blue</bx-radio-button>
+  </bx-radio-group>
+  <pre>value: {{ data }}</pre>
+</template>
+  </div>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">template</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"auto-binding"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">bx-radio-group</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"radio-buttons"</span> <span class="hljs-attribute">model</span>=<span class="hljs-value">"{{ data }}'"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"mb2"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">bx-radio-button</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"radio-buttons"</span> <span class="hljs-attribute">model</span>=<span class="hljs-value">"{{ data }}"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"red"</span>&gt;</span>Red<span class="hljs-tag">&lt;/<span class="hljs-title">bx-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">bx-radio-button</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"radio-buttons"</span> <span class="hljs-attribute">model</span>=<span class="hljs-value">"{{ data }}"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"green"</span>&gt;</span>Green<span class="hljs-tag">&lt;/<span class="hljs-title">bx-radio-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">bx-radio-button</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"radio-buttons"</span> <span class="hljs-attribute">model</span>=<span class="hljs-value">"{{ data }}"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"blue"</span>&gt;</span>Blue<span class="hljs-tag">&lt;/<span class="hljs-title">bx-radio-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">bx-radio-group</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">pre</span>&gt;</span>value: {{ data }}<span class="hljs-tag">&lt;/<span class="hljs-title">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span></pre>
+</div>
 <h2 id="nav-item">Nav Item</h2>
 <div class="MarkedExample bg-darken-1 rounded">
   <div class="MarkedExample-rendered p2">
-    <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
+    <a is="bx-nav-item" href="#nav-item">Nav Item</a>
   </div>
-  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-nav-item</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">bx-nav-item</span>&gt;</span></pre>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span></pre>
 </div>
 <h2 id="menu">Menu</h2>
 <div class="MarkedExample bg-darken-1 rounded">
   <div class="MarkedExample-rendered p2">
     <bx-menu>
-  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
-  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
-  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
-  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
 </bx-menu>
   </div>
   <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-menu</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">bx-nav-item</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">bx-nav-item</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">bx-nav-item</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">bx-nav-item</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">bx-nav-item</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">bx-nav-item</span>&gt;</span>
-  <span class="hljs-tag">&lt;<span class="hljs-title">bx-nav-item</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">bx-nav-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">bx-menu</span>&gt;</span></pre>
+</div>
+<h2 id="nav">Nav</h2>
+<div class="MarkedExample bg-darken-1 rounded">
+  <div class="MarkedExample-rendered p2">
+    <bx-nav>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+</bx-nav>
+  </div>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-nav</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">bx-nav</span>&gt;</span></pre>
+</div>
+<div class="MarkedExample bg-darken-1 rounded">
+  <div class="MarkedExample-rendered p2">
+    <bx-nav theme="info">
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+  <a is="bx-nav-item" href="#nav-item">Nav Item</a>
+</bx-nav>
+  </div>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-nav</span> <span class="hljs-attribute">theme</span>=<span class="hljs-value">"info"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#nav-item"</span>&gt;</span>Nav Item<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">bx-nav</span>&gt;</span></pre>
 </div>
 <h2 id="column-row">Column &amp; Row</h2>
 <div class="MarkedExample bg-darken-1 rounded">
@@ -169,21 +265,95 @@
 <h2 id="panel">Panel</h2>
 <div class="MarkedExample bg-darken-1 rounded">
   <div class="MarkedExample-rendered p2">
-    <bx-panel state="info" class="p2">
+    <bx-panel state="info" class="mb2">
   <header>bx-panel</header>
   <img src="//placekitten.com/256" />
   <p>Just a default panel</p>
   <footer>Footer</footer>
 </bx-panel>
+<bx-panel>
+  <h1>Panel with no header or footer</h1>
+  <p>Just a default panel</p>
+</bx-panel>
   </div>
-  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-panel</span> <span class="hljs-attribute">state</span>=<span class="hljs-value">"info"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"p2"</span>&gt;</span>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-panel</span> <span class="hljs-attribute">state</span>=<span class="hljs-value">"info"</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"mb2"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">header</span>&gt;</span>bx-panel<span class="hljs-tag">&lt;/<span class="hljs-title">header</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//placekitten.com/256"</span> /&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Just a default panel<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">footer</span>&gt;</span>Footer<span class="hljs-tag">&lt;/<span class="hljs-title">footer</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">bx-panel</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">bx-panel</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h1</span>&gt;</span>Panel with no header or footer<span class="hljs-tag">&lt;/<span class="hljs-title">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span>&gt;</span>Just a default panel<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">bx-panel</span>&gt;</span></pre>
 </div>
-<hr>
+<h2 id="card">Card</h2>
+<div class="MarkedExample bg-darken-1 rounded">
+  <div class="MarkedExample-rendered p2">
+    <bx-card class="mr2">
+  <img src="//placehold.it/256"/>
+  <h3 class="m0">Card</h3>
+  <p class="m0">Default card</p>
+</bx-card>
+<bx-card state="info">
+  <img src="//placehold.it/256"/>
+  <h3 class="m0">Info Card</h3>
+  <p class="m0">Info card</p>
+</bx-card>
+  </div>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-card</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"mr2"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//placehold.it/256"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"m0"</span>&gt;</span>Card<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"m0"</span>&gt;</span>Default card<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">bx-card</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">bx-card</span> <span class="hljs-attribute">state</span>=<span class="hljs-value">"info"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">img</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"//placehold.it/256"</span>/&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">h3</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"m0"</span>&gt;</span>Info Card<span class="hljs-tag">&lt;/<span class="hljs-title">h3</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">p</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"m0"</span>&gt;</span>Info card<span class="hljs-tag">&lt;/<span class="hljs-title">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">bx-card</span>&gt;</span></pre>
+</div>
+<h2 id="dropdown">Dropdown</h2>
+<div class="MarkedExample bg-darken-1 rounded">
+  <div class="MarkedExample-rendered p2">
+    <bx-dropdown>
+  <bx-button>Dropdown</bx-button>
+  <bx-menu>
+    <a is="bx-nav-item" href="#dropdown">Action</a>
+    <a is="bx-nav-item" href="#dropdown">Action</a>
+    <a is="bx-nav-item" href="#dropdown">Action</a>
+    <a is="bx-nav-item" href="#dropdown">Action</a>
+  </bx-menu>
+</bx-dropdown>
+  </div>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-dropdown</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">bx-button</span>&gt;</span>Dropdown<span class="hljs-tag">&lt;/<span class="hljs-title">bx-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">bx-menu</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#dropdown"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#dropdown"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#dropdown"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">href</span>=<span class="hljs-value">"#dropdown"</span>&gt;</span>Action<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-title">bx-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">bx-dropdown</span>&gt;</span></pre>
+</div>
+<h2 id="pagination">Pagination</h2>
+<div class="MarkedExample bg-darken-1 rounded">
+  <div class="MarkedExample-rendered p2">
+    <bx-pagination>
+  <a is="bx-nav-item">Previous</a>
+  <a is="bx-nav-item">1</a>
+  <a is="bx-nav-item" active="true">2</a>
+  <a is="bx-nav-item">3</a>
+  <a is="bx-nav-item">Next</a>
+</bx-pagination>
+  </div>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">bx-pagination</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span>&gt;</span>Previous<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span>&gt;</span>1<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span> <span class="hljs-attribute">active</span>=<span class="hljs-value">"true"</span>&gt;</span>2<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span>&gt;</span>3<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">a</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"bx-nav-item"</span>&gt;</span>Next<span class="hljs-tag">&lt;/<span class="hljs-title">a</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">bx-pagination</span>&gt;</span></pre>
+</div>
 <!--
 
 ## Layout
@@ -197,11 +367,11 @@
 - [x] Color States
 - [x] Badge
 - [x] Message
-- [/] Panel
-- [ ] Card
-- [ ] Dropdown
+- [x] Panel
+- [x] Card
+- [x] Dropdown (test with core-dropdown)
 - [ ] Modal
-- [ ] Pagination
+- [/] Pagination
 - [ ] Nav
 - [ ] Navbar
 - [x] Menu
@@ -210,8 +380,9 @@
 ## Forms
 - [x] Button
 - [x] Nav Item
-- [ ] Button Group
-- [ ] Radio Button
+- [/] Button Group
+- [x] Radio Button
+- [/] Radio Group
 - [ ] Range
 - [ ] Progress
 - [ ] Stepper

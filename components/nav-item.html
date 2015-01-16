@@ -1,24 +1,32 @@
 
 <link rel="import" href="../bower_components/polymer/polymer.html">
 
-<polymer-element name="bx-nav-item" attributes="href color">
+<polymer-element name="bx-nav-item" attributes="active color big narrow" extends="a">
 
   <template>
     <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/utility.css">
     <link rel="stylesheet" href="../css/color.css">
     <style>
       :host { display: inline-block }
     </style>
 
-    <a href="{{ href }}" class="button button-nav-{{ color }}">
+    <span class="button
+      button-nav-{{ color }}
+      {{ active ? 'darken-1 is-active' : '' }}
+      {{ narrow ? 'button-narrow' : '' }}
+      {{ big ? 'button-big' : '' }}">
       <content></content>
-    </a>
+    </span>
 
   </template>
 
   <script>
     Polymer({
-      color: 'light'
+      active: false,
+      color: 'light',
+      big: false,
+      narrow: false,
     })
   </script>
 

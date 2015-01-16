@@ -17,6 +17,7 @@
     "core-component-page": "Polymer/core-component-page#^0.5.0",
     "polymer": "Polymer/polymer#~0.5.2",
     "core-ajax": "Polymer/core-ajax#~0.5.2",
-    "core-style": "Polymer/core-style#~0.5.2"
+    "core-style": "Polymer/core-style#~0.5.2",
+    "core-dropdown": "Polymer/core-dropdown#~0.5.2"
   }
 }
