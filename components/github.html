@@ -1,0 +1,28 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+<link rel="import" href="../bower_components/core-style/core-style.html">
+
+<polymer-element name="bx-github" attributes="username" noscript>
+
+  <template>
+    <style>
+      :host { display: block }
+    </style>
+
+    <core-ajax
+      url="https://api.github.com/users/{{ username }}"
+      auto
+      handleAs="json"
+      response="{{resp}}">
+    </core-ajax>
+
+    <img src="{{ resp.avatar_url }}" />
+    <h1>{{ resp.login }}</h1>
+
+    <content></content>
+
+    <pre>{{ resp }}</pre>
+  </template>
+
+</polymer-element>
+

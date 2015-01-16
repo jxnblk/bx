@@ -1,0 +1,36 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="bx-button" attributes="color toggle">
+
+  <template>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <style>
+      :host { display: inline-block }
+    </style>
+
+    <button class="button-{{ color }} {{ active ? 'is-active' : '' }}" on-click="{{ handleClick }}">
+      <content></content>
+    </button>
+
+  </template>
+
+  <script>
+    Polymer({
+      color: 'light-gray',
+      active: false,
+      toggle: false,
+      toggleActive: function () {
+        this.active = !this.active;
+        console.log(this.active);
+      },
+      ready: function () {
+        if (this.toggle) {
+          this.handleClick = this.toggleActive;
+        }
+      }
+    });
+  </script>
+
+</polymer-element>

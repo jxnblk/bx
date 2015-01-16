@@ -1,0 +1,69 @@
+{
+  "name": "bassx",
+  "version": "0.0.1",
+  "description": "",
+  "author": "Brent Jackson",
+  "license": "MIT",
+  "dependencies": {},
+  "devDependencies": {
+    "basscss-base-buttons": "latest",
+    "basscss-base-forms": "latest",
+    "basscss-base-reset": "latest",
+    "basscss-base-tables": "latest",
+    "basscss-base-typography": "latest",
+    "basscss-color-base": "latest",
+    "basscss-color-borders": "latest",
+    "basscss-color-buttons": "latest",
+    "basscss-color-forms": "latest",
+    "basscss-color-forms-dark": "latest",
+    "basscss-color-tables": "latest",
+    "basscss-colors": "latest",
+    "basscss-defaults": "latest",
+    "basscss-grid": "latest",
+    "basscss-positions": "latest",
+    "basscss-table-object": "latest",
+    "basscss-ui-utility-button-sizes": "latest",
+    "basscss-ui-utility-disclosure-states": "latest",
+    "basscss-ui-utility-groups": "latest",
+    "basscss-utility-layout": "latest",
+    "basscss-utility-responsive-states": "latest",
+    "basscss-utility-typography": "latest",
+    "basscss-utility-white-space": "latest",
+    "basscss": "latest",
+    "browserify": "^8.0.3",
+    "vinyl-transform": "^1.0.0",
+    "gulp": "^3.8.10",
+    "gulp-basswork": "0.0.9",
+    "gulp-minify-css": "^0.3.11",
+    "gulp-rename": "^1.2.0",
+    "gulp-uglify": "^1.0.1",
+    "gulp-webserver": "^0.8.7",
+    "brfs": "^1.2.0",
+    "lodash": "^2.4.1",
+    "flex-object": "^1.0.4",
+    "marked": "^0.3.2",
+    "marked-example": "^1.0.4"
+  },
+  "browserify": {
+    "transform": [
+      "brfs"
+    ]
+  },
+  "scripts": {
+    "start": "gulp"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jxnblk/bx.git"
+  },
+  "keywords": [
+    "CSS",
+    "OOCSS",
+    "Basscss",
+    "Polymer"
+  ],
+  "bugs": {
+    "url": "https://github.com/jxnblk/bx/issues"
+  },
+  "homepage": "https://github.com/jxnblk/bx"
+}

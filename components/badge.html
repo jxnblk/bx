@@ -1,0 +1,21 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="color-states.html">
+
+<polymer-element name="bx-badge" attributes="state" noscript>
+
+  <template>
+    <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <style>
+      :host { display: inline-block; font-size: 75%; }
+    </style>
+    <bx-color-states state="{{ state }}" colorclass="{{ colorclass }}"></bx-color-states>
+
+    <span class="inline-block button-small rounded {{ colorclass }}">
+      <content></content>
+    </span>
+
+  </template>
+
+</polymer-element>

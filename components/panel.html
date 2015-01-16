@@ -1,0 +1,29 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="color-states.html">
+
+<polymer-element name="bx-panel" attributes="state" noscript>
+
+  <template>
+    <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/flex-object.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <style>
+      :host { display: block }
+    </style>
+    <bx-color-states state="{{ state }}" colorclass="{{ colorclass }}"></bx-color-states>
+
+    <section class="flex flex-column border rounded">
+      <header id="h" class="bold p2 {{ colorclass }}">
+        <content select="header"></content>
+      </header>
+      <footer class="flex-last p2 border-top bg-lighter-gray">
+        <content select="footer"></content>
+      </footer>
+      <div id="main" class="p2">
+        <content></content>
+      </div>
+    </section>
+  </template>
+
+</polymer-element>

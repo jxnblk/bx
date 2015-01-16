@@ -1,0 +1,19 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="bx-column" attributes="width" noscript>
+
+  <template>
+    <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/grid.css">
+    <style>
+      :host { display: block }
+    </style>
+
+    <div class="sm-col sm-col-{{ width }} px2">
+      <content></content>
+    </div>
+
+  </template>
+
+</polymer-element>

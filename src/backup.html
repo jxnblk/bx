@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Bx</title>
+  <link rel="stylesheet" href="//basscss.com/docs/css/base.min.css">
+
+  <script src="bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+  <!-- Layout Components -->
+  <link rel="import" href="components/media.html">
+  <link rel="import" href="components/row.html">
+  <link rel="import" href="components/column.html">
+  <link rel="import" href="components/flex.html">
+
+  <!-- Form Components
+  <link rel="import" href="components/radio-button.html">
+  -->
+  <link rel="import" href="components/button.html">
+  <link rel="import" href="components/nav-item.html">
+
+  <!-- App Components -->
+  <link rel="import" href="components/message.html">
+  <link rel="import" href="components/badge.html">
+  <link rel="import" href="components/menu.html">
+  <link rel="import" href="components/panel.html">
+
+</head>
+<body class="container px2">
+
+<header class="py4">
+  <h1 class="h1 h1-responsive xcaps m0">Bx</h1>
+</header>
+
+
+<hr>
+
+<h2>Media Object</h2>
+<bx-media>
+  <img src="//placehold.it/128"/>
+  <h3>Media Object</h3>
+  <p>Put whatever you want here</p>
+</bx-media>
+
+<bx-media center="true">
+  <img src="//placehold.it/128"/>
+  <h3 class="m0">Centered Media Object</h3>
+  <p class="m0">Basically the flag object</p>
+</bx-media>
+
+
+<hr>
+
+<h2>Message</h2>
+
+<bx-message>Flash Message</bx-message>
+<bx-message state="info">Info Message</bx-message>
+<bx-message state="success">Success Message</bx-message>
+<bx-message state="warning">Warning Message</bx-message>
+<bx-message state="error">Error Message</bx-message>
+<bx-message state="dark">Dark Message</bx-message>
+
+<hr>
+
+<h2>Badge</h2>
+<h3>Hamburger <bx-badge>Default</bx-badge></h3>
+<h3>Hamburger <bx-badge state="info">Info</bx-badge></h3>
+<h3>Hamburger <bx-badge state="success">Success</bx-badge></h3>
+<h3>Hamburger <bx-badge state="warning">Warning</bx-badge></h3>
+<h3>Hamburger <bx-badge state="error">Error</bx-badge></h3>
+<h3>Hamburger <bx-badge state="dark">Dark</bx-badge></h3>
+
+<hr>
+
+<h2>Button</h2>
+<bx-button>Button</bx-button>
+<bx-button color="blue">Blue Button</bx-button>
+<bx-button color="red">Red Button</bx-button>
+<bx-button color="blue" toggle="true">Toggle Button</bx-button>
+
+<h2>Nav Item</h2>
+<bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
+<div class="bg-dark-gray">
+  <bx-nav-item color="dark" href="#nav-item">Nav Item</bx-nav-item>
+</div>
+
+<hr>
+
+<h2>Menu</h2>
+<bx-menu>
+  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
+  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
+  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
+  <bx-nav-item href="#nav-item">Nav Item</bx-nav-item>
+</bx-menu>
+
+<hr>
+
+<h2>bx-row bx-column</h2>
+<bx-row>
+  <bx-column width="4"><div class="p2 border rounded">bx-column 4</div></bx-column>
+  <bx-column width="4"><div class="p2 border rounded">bx-column 4</div></bx-column>
+  <bx-column width="4"><div class="p2 border rounded">bx-column 4</div></bx-column>
+</bx-row>
+
+<hr>
+
+<h2>bx-flex</h2>
+<bx-flex wrap="true" class="mxn2">
+  <div class="col col-4 px2"> <div class="p2 border rounded">bx-flex</div> </div>
+  <div class="col col-4 px2"> <div class="p2 border rounded">bx-flex</div> </div>
+  <div class="col col-4 px2"> <div class="p2 border rounded">bx-flex</div> </div>
+</bx-flex>
+
+<hr>
+
+<bx-flex class="mxn2">
+  <bx-panel class="p2">
+    <img src="//placekitten.com/256" />
+    <p>Just a default panel</p>
+    <footer>Footer</footer>
+  </bx-panel>
+  <bx-panel state="info" class="p2">
+    <header>bx-panel</header>
+    <img src="//placekitten.com/256" />
+    <p>Just a default panel</p>
+    <footer>Footer</footer>
+  </bx-panel>
+</bx-flex>
+
+<hr>
+
+<script src="/js/app.min.js"></script>
+
+</body>
+</html>

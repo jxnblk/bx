@@ -1,0 +1,17 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="bx-flex" attributes="wrap center" noscript>
+
+  <template>
+    <link rel="stylesheet" href="../css/flex-object.css">
+    <style>
+      :host { display: block }
+    </style>
+
+    <div class="flex {{ wrap ? 'flex-wrap' : '' }} {{ center ? 'flex-center' : '' }}">
+      <content></content>
+    </div>
+  </template>
+
+</polymer-element>

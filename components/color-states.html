@@ -1,0 +1,38 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="bx-color-states" attributes="state colorclass">
+
+  <script>
+    Polymer({
+      state: '',
+      colorclass: '',
+      ready: function() {
+        var self = this;
+        var getClass = function() {
+          switch (self.state) {
+            case 'info':
+              return 'white bg-blue';
+              break;
+            case 'success':
+              return 'white bg-green';
+              break;
+            case 'warning':
+              return 'bg-yellow';
+              break;
+            case 'error':
+              return 'white bg-red';
+              break;
+            case 'dark':
+              return 'white bg-dark-gray';
+              break;
+            default:
+              return 'bg-lighter-gray border';
+          }
+        };
+        this.colorclass = getClass();
+      }
+    });
+  </script>
+
+</polymer-element>

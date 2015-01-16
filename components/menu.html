@@ -1,0 +1,28 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="bx-menu" attributes="color">
+
+  <template>
+    <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <style>
+      :host { display: block }
+      ::content * {
+        display: block;
+      }
+    </style>
+
+    <div class="inline-block rounded border bg-{{ color }}">
+      <content></content>
+    </div>
+
+  </template>
+
+  <script>
+    Polymer({
+      color: 'white'
+    });
+  </script>
+
+</polymer-element>

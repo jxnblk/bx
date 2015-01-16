@@ -1,0 +1,25 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+
+<polymer-element name="bx-nav-item" attributes="href color">
+
+  <template>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <style>
+      :host { display: inline-block }
+    </style>
+
+    <a href="{{ href }}" class="button button-nav-{{ color }}">
+      <content></content>
+    </a>
+
+  </template>
+
+  <script>
+    Polymer({
+      color: 'light'
+    })
+  </script>
+
+</polymer-element>
