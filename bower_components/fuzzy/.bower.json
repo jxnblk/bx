@@ -1,0 +1,35 @@
+{
+  "name": "fuzzy",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mattyork/fuzzy",
+  "authors": [
+    "Matt York <york.matt@gmail.com>"
+  ],
+  "description": "small, standalone fuzzy search / fuzzy filter like sublime text Cmd-P. browser or node.",
+  "main": "lib/fuzzy.js",
+  "keywords": [
+    "fuzzy",
+    "search",
+    "filter",
+    "sublime",
+    "sublime text"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "_release": "0.1.0",
+  "_resolution": {
+    "type": "version",
+    "tag": "v0.1.0",
+    "commit": "bfbe805dc89cbd767900e5c06e2f38ea4b86c02a"
+  },
+  "_source": "git://github.com/mattyork/fuzzy.git",
+  "_target": "~0.1.0",
+  "_originalSource": "fuzzy",
+  "_direct": true
+}

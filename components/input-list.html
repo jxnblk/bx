@@ -1,0 +1,67 @@
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="menu.html">
+<link rel="import" href="nav-item.html">
+
+<!--
+to do:
+- keyboard control
+- highlighting
+-->
+
+<polymer-element name="bx-input-list" attributes="datalist model color">
+
+  <template>
+    <link rel="stylesheet" href="../css/base.css">
+    <link rel="stylesheet" href="../css/utility.css">
+    <link rel="stylesheet" href="../css/color.css">
+    <style>
+      :host { display: inline-block }
+    </style>
+
+    <div class="relative">
+      <!--
+      <input class="field-{{ color }}" value="{{ model }}" list="datalist">
+      -->
+      <input class="field-{{ color }}" value="{{ model }}">
+      <template if="{{ suggestions.length < 3 && suggestions[0].string != model }}">
+        <bx-menu class="block">
+          <template repeat="{{ result in suggestions }}">
+            <a is="bx-nav-item" class="block" on-click="{{ completeValue }}">{{ result.string }}</a>
+          </template>
+        </bx-menu>
+      </template>
+    </div>
+
+    <datalist id="datalist">
+      <template repeat="{{ item in datalist }}">
+        <option value="{{ item }}">
+      </template>
+    </datalist>
+
+  </template>
+
+  <script src="../bower_components/fuse.js/src/fuse.min.js"></script>
+  <script src="../bower_components/fuzzy/lib/fuzzy.js"></script>
+  <script>
+    Polymer({
+      color: 'light',
+      model: '',
+      datalist: ['red', 'green', 'blue'],
+      //fuse: '',
+      suggestions: [],
+      ready: function() {
+        this.fuzzy = fuzzy;
+        this.suggestions = this.fuzzy.filter(this.model, this.datalist);
+      },
+      modelChanged: function() {
+        this.suggestions = this.fuzzy.filter(this.model, this.datalist);
+      },
+      completeValue: function(e) {
+        console.log('complete', e.target.innerText);
+        this.model = e.target.innerText;
+      },
+    });
+  </script>
+
+</polymer-element>

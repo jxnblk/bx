@@ -99,6 +99,15 @@
 </template>
 ```
 
+## Input List
+
+```html
+<template is="auto-binding">
+  <bx-input-list model="{{ value }}" datalist="{{ [ 'red', 'green', 'blue' ] }}"/></bx-input-list>
+  <code>value: {{ value }}</code>
+</template>
+```
+
 ## Nav Item
 
 ```html

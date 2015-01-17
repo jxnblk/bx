@@ -19,6 +19,7 @@
   <link rel="import" href="components/nav-item.html">
   <link rel="import" href="components/button-group.html">
   <link rel="import" href="components/radio-group.html">
+  <link rel="import" href="components/input-list.html">
 
   <!-- App Components -->
   <link rel="import" href="components/message.html">
@@ -39,7 +40,7 @@
 
 
 <div class="clearfix mxn2">
-  <div class="sm-col sm-col-9">
+  <div class="sm-col sm-col-9 px2">
     <h1 class="hide">Bx</h1>
 
 
@@ -194,6 +195,19 @@
     <span class="hljs-tag">&lt;<span class="hljs-title">bx-radio-button</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"radio-buttons"</span> <span class="hljs-attribute">model</span>=<span class="hljs-value">"{{ data }}"</span> <span class="hljs-attribute">value</span>=<span class="hljs-value">"blue"</span>&gt;</span>Blue<span class="hljs-tag">&lt;/<span class="hljs-title">bx-radio-button</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-title">bx-radio-group</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>value: {{ data }}<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span></pre>
+</div>
+<h2 id="input-list">Input List</h2>
+<div class="MarkedExample bg-darken-1 rounded">
+  <div class="MarkedExample-rendered p2">
+    <template is="auto-binding">
+  <bx-input-list model="{{ value }}" datalist="{{ [ 'red', 'green', 'blue' ] }}"/></bx-input-list>
+  <code>value: {{ value }}</code>
+</template>
+  </div>
+  <pre class="MarkedExample-code p2 bg-darken-1"><span class="hljs-tag">&lt;<span class="hljs-title">template</span> <span class="hljs-attribute">is</span>=<span class="hljs-value">"auto-binding"</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">bx-input-list</span> <span class="hljs-attribute">model</span>=<span class="hljs-value">"{{ value }}"</span> <span class="hljs-attribute">datalist</span>=<span class="hljs-value">"{{ [ 'red', 'green', 'blue' ] }}"</span>/&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-title">bx-input-list</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-title">code</span>&gt;</span>value: {{ value }}<span class="hljs-tag">&lt;/<span class="hljs-title">code</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-title">template</span>&gt;</span></pre>
 </div>
 <h2 id="nav-item">Nav Item</h2>
@@ -421,7 +435,7 @@
 -->
 
   </div>
-  <div class="sticky top-0 py3 sm-col sm-col-3">
+  <div class="sticky top-0 sm-col sm-col-3 px2 py3">
     <ul>
 <li><a href="#media-object">Media Object</a></li>
 <li><a href="#message">Message</a></li>
@@ -430,6 +444,7 @@
 <li><a href="#radio-button">Radio Button</a></li>
 <li><a href="#button-group">Button Group</a></li>
 <li><a href="#radio-group">Radio Group</a></li>
+<li><a href="#input-list">Input List</a></li>
 <li><a href="#nav-item">Nav Item</a></li>
 <li><a href="#menu">Menu</a></li>
 <li><a href="#nav">Nav</a></li>
